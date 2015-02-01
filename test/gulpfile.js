@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var cssSprite = require('../');
 
-// Tasks
+// autoSprite, with media query
 gulp.task('autoSprite', function() {
     gulp.src('css/*.css').pipe(cssSprite({
         // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
@@ -28,6 +28,26 @@ gulp.task('autoSprite', function() {
     .pipe(gulp.dest('publish/'));
 });
 
+// imageSetSprite, with image-set
+gulp.task('imageSetSprite', function() {
+    gulp.src('css/*.css').pipe(cssSprite({
+        cssfile: 'css/icon.css',
+        imagepath: 'slice/',
+        padding: 20,
+        useimageset: true,
+        spritestamp: true,
+        // imagepath_map: ['/w/grunt-css-sprite/test/', '../'],
+        /*
+        imagepath_map: function(uri) {
+            return String(uri).replace('/w/grunt-css-sprite/test/', '../');
+        },
+        */
+        spritepath: '../images/',
+        spritedest: 'images/'
+    }))
+    .pipe(gulp.dest('publish/imageset/'));
+});
+
 gulp.task('jshint', function() {
     gulp.src([
         '../lib/*.js',
@@ -37,99 +57,4 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('default', ['jshint', 'autoSprite']);
-
-return;
-
-
-// Load in dependencies
-var gulp = require('gulp');
-var through2 = require('through2');
-var spritesmith = require('../');
-
-// Define our test tasks
-var images = [
-  'test-files/sprite1.png',
-  'test-files/sprite2.png',
-  'test-files/sprite3.png'
-];
-gulp.task('sprite-default', function () {
-  gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css'
-  }))
-  .pipe(gulp.dest('actual-files/default/'));
-});
-
-gulp.task('sprite-two-streams', function () {
-  var data = gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css'
-  }));
-  data.img.pipe(gulp.dest('actual-files/two-streams/'));
-  data.css.pipe(gulp.dest('actual-files/two-streams/'));
-});
-
-gulp.task('sprite-formats', function () {
-  gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.jpg',
-    cssName: 'sprite.css',
-    imgOpts: {
-      format: 'png'
-    },
-    cssFormat: 'stylus',
-    engine: 'phantomjssmith',
-    // Use `top-down` for easier testing
-    algorithm: 'top-down'
-  }))
-  .pipe(gulp.dest('actual-files/formats/'));
-});
-
-gulp.task('sprite-options', function () {
-  gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css',
-    imgPath: '../../everywhere.png',
-    algorithm: 'alt-diagonal'
-  }))
-  .pipe(gulp.dest('actual-files/options/'));
-});
-
-gulp.task('sprite-template', function () {
-  gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.scss',
-    cssTemplate: 'test-files/scss.template.mustache',
-    // Use `top-down` for easier testing
-    algorithm: 'top-down'
-  }))
-  .pipe(gulp.dest('actual-files/template/'));
-});
-
-gulp.task('sprite-spritesheet-name', function () {
-  gulp.src(images).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.scss',
-    cssSpritesheetName: 'icons',
-    // Use `top-down` for easier testing
-    algorithm: 'top-down'
-  }))
-  .pipe(gulp.dest('actual-files/spritesheet-name/'));
-});
-
-gulp.task('sprite-empty', function () {
-  gulp.src(images).pipe(through2.obj(
-    // On data, do nothing and callback
-    function onEmptyData (file, encoding, cb) {
-      cb();
-    },
-    // On end, callback with nothing
-    function onEmptyEnd (cb) {
-      cb();
-    }
-  )).pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.scss'
-  }))
-  .pipe(gulp.dest('actual-files/empty/'));
-});
+gulp.task('default', ['jshint', 'autoSprite', 'imageSetSprite']);
