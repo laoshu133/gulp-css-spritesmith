@@ -12,11 +12,11 @@ a[href*='}{']::after{ content:'}{';}
 a[href*='}{']::after{ content:'}{';}
 
 .icon_switch-off{background-position: 0 0;width:71px;height:29px}
-.icon_switch-on{background-position: -91px 0;width:71px;height:29px}
-.icon_tip-error{background-position: 0 -49px;width:24px;height:24px}
-.icon_tip-ok{background-position: -44px -49px;width:24px;height:24px}
-.icon_tip-warn{background-position: -88px -49px;width:24px;height:24px}
-.icon_wait{background-position: -132px -49px;width:14px;height:14px}
+.icon_switch-on{background-position: 0 -49px;width:71px;height:29px}
+.icon_tip-error{background-position: -91px 0;width:24px;height:24px}
+.icon_tip-ok{background-position: 0 -98px;width:24px;height:24px}
+.icon_tip-warn{background-position: -91px -44px;width:24px;height:24px}
+.icon_wait{background-position: -44px -98px;width:14px;height:14px}
 
 /* comments test */
 /*.icon_switch-off{background-image:url("../slice/icon_switch-off.png");width:71px;height:29px}
@@ -26,13 +26,13 @@ a[href*='}{']::after{ content:'}{';}
 .icon_tip-warn{background-image:url("../slice/icon_tip-warn.png");width:24px;height:24px}
 .icon_wait{background-image:url("../slice/icon_wait.png") !important;width:14px;height:14px}*/
 
-.iocn_ext1{ background-position: -132px -49px;}
-.iocn_ext1{ background-position: -132px -49px; /* repeat test */}
+.iocn_ext1{ background-position: -44px -98px;}
+.iocn_ext1{ background-position: -44px -98px; /* repeat test */}
 /* miss semicolon test */
-.iocn_ext2{ height:14px; width:14px; background-position: -132px -49px;}
+.iocn_ext2{ height:14px; width:14px; background-position: -44px -98px;}
 .iocn_ext3{ background-image:url(../slice/icon_wait_nofile.png); /* no file test */}
-.iocn_ext4{ background: no-repeat;background-position: -132px -49px;}
-.iocn_ext5{ background:#fff no-repeat;background-position: -132px -49px;}
+.iocn_ext4{ background: no-repeat;background-position: -44px -98px;}
+.iocn_ext5{ background:#fff no-repeat;background-position: -44px -98px;}
 
 /* path test */
 .iocn_ext7{ background-image:url(/slice/icon_wait.png);}
@@ -41,26 +41,26 @@ a[href*='}{']::after{ content:'}{';}
 .iocn_ext9{
 	/* multi-line test */
 	background:url(/slice/icon_wait.png) no-repeat;
-	background-image: no-repeat;background-position: -132px -49px;
+	background-image: no-repeat;background-position: -44px -98px;
 }
 
 .iocn_ext10{
 	/* content test */
 	content: '}';
-	background: no-repeat;background-position: -88px -49px;
+	background: no-repeat;background-position: -91px -44px;
 	_background-image:url(../slice/icon_tip-warn.png);
 }
 
 #iocn_ext11{
-	background: no-repeat;background-position: -132px -49px;
-	background-position: -88px -49px;
+	background: no-repeat;background-position: -44px -98px;
+	background-position: -91px -44px;
 	content: '}';
 }
 
-span{ background: no-repeat;background-position: -132px -49px; }
+span{ background: no-repeat;background-position: -44px -98px; }
 
 
-/* ../images/icon.png?20150202003826 */
+/* ../images/icon.png?20150202010732 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
@@ -75,6 +75,6 @@ span{ background: no-repeat;background-position: -132px -49px; }
 .iocn_ext10,
 #iocn_ext11,
 span{
-background-image: url(../images/icon.png?20150202003826);
-background-image: -webkit-image-set(url(../images/icon.png?20150202003826) 1x, url(../images/icon@2x.png?20150202003826) 2x); background-image: -moz-image-set(url(../images/icon.png?20150202003826) 1x, url(../images/icon@2x.png?20150202003826) 2x); background-image: -ms-image-set(url(../images/icon.png?20150202003826) 1x, url(../images/icon@2x.png?20150202003826) 2x); background-image: image-set(url(../images/icon.png?20150202003826) 1x, url(../images/icon@2x.png?20150202003826) 2x);
+background-image: url(../images/icon.png?20150202010732);
+background-image: -webkit-image-set(url(../images/icon.png?20150202010732) 1x, url(../images/icon@2x.png?20150202010732) 2x); background-image: -moz-image-set(url(../images/icon.png?20150202010732) 1x, url(../images/icon@2x.png?20150202010732) 2x); background-image: -ms-image-set(url(../images/icon.png?20150202010732) 1x, url(../images/icon@2x.png?20150202010732) 2x); background-image: image-set(url(../images/icon.png?20150202010732) 1x, url(../images/icon@2x.png?20150202010732) 2x);
 }
