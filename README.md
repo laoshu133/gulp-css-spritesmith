@@ -102,7 +102,7 @@ var cssSprite = require('gulp-css-sprite');
                 └── icon-b@2x.png
         └── publish/
             ├── css/
-                └── icon.sprite.css
+                └── icon.css
             └── images/
                 ├── icon.png
                 └── icon@2x.png
