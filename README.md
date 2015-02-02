@@ -114,7 +114,7 @@ var cssSprite = require('gulp-css-sprite');
 ## 特别注意
 
 1. 生成后的雪碧图将以源 css 文件名来命名
-2. 仅当CSS中定义`url(xxxx)`的路径匹配参数`imagepath`才进行处理，和具体`background`，`background-image`CSS无关，这里有区别于`grunt-sprite`
+2. 仅当CSS中定义`url(xxxx)`的路径匹配参数`imagepath`才进行处理，和具体`background`，`background-image`CSS无关
 3. 理论上高清切片都应该是源切片尺寸的2倍，所以所有高清切片的尺寸宽和高都必须是偶数
 4. 理论上所有的切片都应该是 `.png` 格式，`png8` `png24` 和 `png32`不限
 5. `spritesmith` 默认只支持png格式，如果有其他格式需要，请参考 *可选依赖*
