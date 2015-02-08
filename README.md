@@ -1,4 +1,4 @@
-# gulp-css-sprite
+# gulp-css-spritesmith
 
 ## 这是什么
 
@@ -83,7 +83,7 @@ gulp.task('autoSprite', function() {
 请不要忘了载入插件
 
 ```
-var cssSprite = require('gulp-css-sprite');
+var cssSprite = require('gulp-css-spritesmith');
 ```
 
 ## 打个比方
@@ -108,7 +108,7 @@ var cssSprite = require('gulp-css-sprite');
                 └── icon@2x.png
 ```
 
-`css/icon.css` 调用`images/slice/`目录下的切片，`gulp-css-sprite` 将对 `css/icon.css` 进行处理。
+`css/icon.css` 调用`images/slice/`目录下的切片，`gulp-css-spritesmith` 将对 `css/icon.css` 进行处理。
 
 
 ## 特别注意
@@ -121,7 +121,7 @@ var cssSprite = require('gulp-css-sprite');
 
 ## 可选依赖
 
-`gulp-css-sprite` 使用 [spritesmith](https://github.com/Ensighten/spritesmith) 作为内部核心实现
+`gulp-css-spritesmith` 使用 [spritesmith](https://github.com/Ensighten/spritesmith) 作为内部核心实现
 
 如果需要将图片处理引擎切换为`gm`或者其他引擎，请手动安装对应的依赖包。
 举例 [Graphics Magick(gm)](http://www.graphicsmagick.org/) 依赖的安装流程：
