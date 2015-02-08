@@ -1,7 +1,7 @@
 // Dependencies
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
-var cssSprite = require('../lib/gulp-css-sprite');
+var cssSprite = require('../lib/gulp-css-spritesmith');
 
 // autoSprite, with media query
 gulp.task('autoSprite', function() {

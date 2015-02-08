@@ -31,12 +31,10 @@
   "dependencies": {
     "through2": "~0.6.1",
     "gulp-util": "~2.2.14",
-    "spritesmith": "~1.1.0",
     "css-spritesmith": "~0.0.2"
   },
   "devDependencies": {
     "gulp": "~3.5.2",
-    "gulp-imagemin": "~1.0.1",
     "jshint": "~2.5.10"
   },
   "keywords": [
