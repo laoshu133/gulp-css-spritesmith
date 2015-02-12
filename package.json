@@ -1,7 +1,7 @@
 {
   "name": "gulp-css-spritesmith",
   "description": "A gulp plugin to help front engineer creating css sprite.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/laoshu133/gulp-css-spritesmith",
   "author": {
     "name": "Mikongge",
@@ -31,7 +31,7 @@
   "dependencies": {
     "through2": "~0.6.1",
     "gulp-util": "~2.2.14",
-    "css-spritesmith": "~0.0.2"
+    "css-spritesmith": "^0.0.3"
   },
   "devDependencies": {
     "gulp": "~3.5.2",
