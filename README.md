@@ -147,6 +147,8 @@ var cssSprite = require('gulp-css-spritesmith');
 
 `0.0.1` 完善功能
 
+`0.0.5` Fix #1 ，感谢 [@thewei](https://github.com/thewei)
+
 
 ## 致谢
 
